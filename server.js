@@ -13,11 +13,7 @@ server.use(
   })
 );
 
-router.render = (req, res) => {
-  if (res.statusCode == 500) {
-    console.log("test");
-  }
-};
+console.log(router);
 
 server.use(router);
 server.listen(3000, () => {
