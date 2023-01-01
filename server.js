@@ -21,7 +21,7 @@ router.render = (req, res) => {
   } else {
     response = { ...data };
   }
-  res.jsonp(response);
+  res.status(200).jsonp(response);
 };
 
 server.use(router);
