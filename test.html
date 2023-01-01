@@ -18,7 +18,8 @@
                 name: "Sản phẩm 4",
                 price: 13000
             })
-        }).then(res => {
+        }).then(res => res.text())
+        .then(res => {
             console.log(res);
         })
     </script>
