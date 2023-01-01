@@ -14,9 +14,9 @@ server.use(
 );
 
 router.render = (req, res) => {
-  res.status(500).jsonp({
-    error: JSON.stringify(res),
-  });
+  if (res.statusCode == 500) {
+    console.log("test");
+  }
 };
 
 server.use(router);
