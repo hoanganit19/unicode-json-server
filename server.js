@@ -14,7 +14,9 @@ server.use(
 );
 
 router.render = (req, res) => {
-  console.log(res);
+  res.status(500).jsonp({
+    error: "error message here",
+  });
 };
 
 server.use(router);
