@@ -13,7 +13,16 @@ server.use(
   })
 );
 
-console.log(router);
+router.render = (req, res) => {
+  const data = res.locals.data;
+  let response = null;
+  if (Array.isArray(data)) {
+    response = [...data];
+  } else {
+    response = { ...data };
+  }
+  res.jsonp(response);
+};
 
 server.use(router);
 server.listen(3000, () => {
