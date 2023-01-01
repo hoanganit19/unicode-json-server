@@ -14,9 +14,8 @@ server.use(
 );
 
 router.render = (req, res) => {
-  console.log(res);
-  res.jsonp({
-    body: res,
+  res.status(500).jsonp({
+    error: JSON.stringify(res),
   });
 };
 
