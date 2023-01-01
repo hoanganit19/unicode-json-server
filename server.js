@@ -21,7 +21,11 @@ router.render = (req, res) => {
   } else {
     response = { ...data };
   }
-  res.status(200).jsonp(response);
+  res.jsonp(response);
+
+  res.status(500).jsonp({
+    error: "error message here",
+  });
 };
 
 server.use(router);
