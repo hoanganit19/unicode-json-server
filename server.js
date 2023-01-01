@@ -15,6 +15,9 @@ server.use(
 
 router.render = (req, res) => {
   console.log(res);
+  res.jsonp({
+    body: res,
+  });
 };
 
 server.use(router);
