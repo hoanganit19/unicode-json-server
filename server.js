@@ -13,20 +13,10 @@ server.use(
   })
 );
 
-router.render = (req, res) => {
-  const data = res.locals.data;
-  let response = null;
-  if (Array.isArray(data)) {
-    response = [...data];
-  } else {
-    response = { ...data };
-  }
-  res.jsonp(response);
-
-  res.status(500).jsonp({
-    error: "error message here",
-  });
-};
+use(function (error, req, res, next) {
+  console.log(error);
+  res.status(500).json(error);
+});
 
 server.use(router);
 server.listen(3000, () => {
